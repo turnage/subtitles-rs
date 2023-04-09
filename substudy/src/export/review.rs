@@ -47,7 +47,7 @@ pub fn export_review(exporter: &mut Exporter) -> Result<()> {
             foreign.as_ref().map(|s| s.period),
             native.as_ref().map(|s| s.period),
         ).expect("subtitle pair must not be empty")
-            .grow(0.5, 0.5);
+            .grow(0.01, 0.01);
 
         let image_path = exporter.schedule_image_export(period.midpoint());
         let audio_path = exporter.schedule_audio_export(foreign_lang, period);
